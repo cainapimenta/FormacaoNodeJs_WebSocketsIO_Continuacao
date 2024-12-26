@@ -3,7 +3,7 @@ import url from "url";
 import path from "path";
 import http from "http";
 import { Server } from "socket.io";
-import { connect, documentosCollection } from "./dbConnector.js";
+import { connect, documentosCollection } from "./db/dbConnector.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
