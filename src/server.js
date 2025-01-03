@@ -18,7 +18,7 @@ const serverHttp = http.createServer(app);
 serverHttp.listen(PORT, async () => {
 	await connect();
 
-	console.log(`Servidor escutando na porta ${PORT}`);
+	console.log(`Servidor escutando na porta http://localhost:${PORT}`);
 });
 
 const io = new Server(serverHttp);
