@@ -2,7 +2,7 @@ import { MongoClient } from "mongodb";
 
 const mongoClient = new MongoClient("mongodb+srv://admin:B1admin%40@dbwebsocketsio.imdc5.mongodb.net/?retryWrites=true&w=majority&appName=DBWebSocketsIO");
 
-let documentosCollection;
+let documentosCollection, usuarioCollection;
 
 async function connect() {
 	try {
@@ -10,6 +10,7 @@ async function connect() {
 
 		const db = mongoClient.db("websockets");
 		documentosCollection = db.collection("documentos");
+		usuarioCollection = db.collection("usuarios");
 
 		console.log("Banco de dados conectado com sucesso!");
 	} catch (error) {
@@ -17,4 +18,4 @@ async function connect() {
 	}
 }
 
-export { connect, documentosCollection };
+export { connect, documentosCollection, usuarioCollection };
