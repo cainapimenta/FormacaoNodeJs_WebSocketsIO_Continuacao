@@ -1,3 +1,4 @@
+import { createSalAndHashPassword } from "../util/passwordUtil.js";
 import { usuarioCollection } from "./dbConnector.js";
 
 function getUsuario(userName) {
@@ -5,7 +6,9 @@ function getUsuario(userName) {
 }
 
 function addUsuario({ userName, passWord }) {
-	return usuarioCollection.insertOne({ userName: userName, passWord: passWord });
+	const { salPassword, hashPassword } = createSalAndHashPassword(passWord);
+
+	return usuarioCollection.insertOne({ userName: userName, hashPassword: hashPassword, salPassword: salPassword });
 }
 
 export { getUsuario, addUsuario };
