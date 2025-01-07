@@ -1,4 +1,4 @@
-import { emitEvent } from "./socket-front-documento.js";
+import { emitEvent } from "./socket/socket-front-documento.js";
 
 const parametros = new URLSearchParams(window.location.search);
 const nomeDocumento = parametros.get("nome");
