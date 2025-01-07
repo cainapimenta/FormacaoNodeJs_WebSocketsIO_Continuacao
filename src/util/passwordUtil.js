@@ -7,4 +7,13 @@ function createSalAndHashPassword(password) {
 	return { salPassword, hashPassword };
 }
 
-export { createSalAndHashPassword };
+function autenticarUsuario(password, usuario) {
+	const hashTeste = scryptSync(password, usuario.salPassword, 64);
+	const hashReal = Buffer.from(usuario.hashPassword, "hex");
+
+	const usuarioAutenticado = hashReal == hashTeste;
+
+	return usuarioAutenticado;
+}
+
+export { createSalAndHashPassword, autenticarUsuario };
