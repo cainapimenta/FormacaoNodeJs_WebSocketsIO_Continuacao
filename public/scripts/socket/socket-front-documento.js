@@ -1,4 +1,4 @@
-import { alertarERedirecionar, updateValueEditor } from "./documento.js";
+import { alertarERedirecionar, updateValueEditor } from "../documento.js";
 
 const socket = io();
 

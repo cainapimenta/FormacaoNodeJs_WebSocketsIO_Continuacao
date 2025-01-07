@@ -1,4 +1,4 @@
-import { insertLinkDocumento, removerLinkDocumento } from "./index.js";
+import { insertLinkDocumento, removerLinkDocumento } from "../index.js";
 
 const socket = io();
 

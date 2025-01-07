@@ -1,4 +1,4 @@
-import { emitirCadastroUsuario } from "./socket-front-cadastro.js";
+import { emitirCadastroUsuario } from "./socket/socket-front-cadastro.js";
 
 const formCadastro = document.getElementById("form-cadastro");
 
